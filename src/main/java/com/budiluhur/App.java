@@ -34,4 +34,8 @@ public class App
     public static boolean checkStockStatus(int stock) {
         return stock > 0;
     }
+
+    public static double calculateTotalPrice(int quantity, double price) {
+        return quantity * price;
+    }
 }
