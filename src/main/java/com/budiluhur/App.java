@@ -23,6 +23,11 @@ public class App
         //Memeriksa status ketersedian
         boolean isAvailable = checkStockStatus(stockQuantity);
         System.out.println("Status Ketersediaan: " + (isAvailable ? "Tersedia" : "Stock Habis"));
+
+        // Menghitung total harga
+        double totalPrice = calculateTotalPrice(4, unitPrice);
+        System.out.println("Total Harga: RP" + totalPrice);
+
     }
 
     public static void printProductDetails(String name, double price, int stock) {
@@ -37,5 +42,6 @@ public class App
 
     public static double calculateTotalPrice(int quantity, double price) {
         return quantity * price;
+
     }
 }
