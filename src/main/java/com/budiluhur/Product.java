@@ -16,7 +16,7 @@ public class Product {
     public String getName() { return name;}
     public double getPricce() { return price;}
     @Override
-     public String to String() {
+     public String toString() {
          return "[" + id + "]" + name + " -Rp"  + price;
      }
 }
