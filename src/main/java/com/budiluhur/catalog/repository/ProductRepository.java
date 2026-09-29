@@ -15,11 +15,11 @@ public class ProductRepository {
     }
 
     public Product findById(String id) throws ProductNotFoundException {
-        fot (product p: productList) {
+        for (product p : productList) {
             if (p.getId().equalsIgnoreCase(id)) {
                 return p;
             }
         }
-        throws new ProductNotFoundException("Produk dengan ID" + id + "tidak ditemukan!");
+        throw new ProductNotFoundException("Produk dengan ID" + id + "tidak ditemukan!");
     }
 }

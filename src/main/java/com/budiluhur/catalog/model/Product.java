@@ -14,7 +14,7 @@ public class Product {
     // Getterv& Setter
     public String getId() { return id;}
     public String getName() { return name;}
-    public double getPricce() { return price;}
+    public double getPrice() { return price;}
     @Override
      public String toString() {
          return "[" + id + "]" + name + " -Rp"  + price;
