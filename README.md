@@ -18,5 +18,5 @@ Aplikasi Java sederhana untuk mengelola katalog produk menggunakan Maven.
 
 dari folder project yang berisi 'pom.xml', jalankan:
 
-'''bash
+```bash
 mvn org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass=com.budiluhur.catalog.App
