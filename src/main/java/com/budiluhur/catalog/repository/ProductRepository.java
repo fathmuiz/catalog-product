@@ -2,6 +2,8 @@ package com.budiluhur.catalog.repository;
 
 import com.budiluhur.catalog.model.Product;
 import com.budiluhur.catalog.exception.ProductNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductRepository {
     private List<Product> productList = new ArrayList<>();
@@ -15,7 +17,7 @@ public class ProductRepository {
     }
 
     public Product findById(String id) throws ProductNotFoundException {
-        for (product p : productList) {
+        for (Product p : productList) {
             if (p.getId().equalsIgnoreCase(id)) {
                 return p;
             }
