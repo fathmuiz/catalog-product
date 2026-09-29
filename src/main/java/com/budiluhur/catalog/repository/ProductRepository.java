@@ -16,6 +16,17 @@ public class ProductRepository {
         return productList;
     }
 
+    public boolean deleteById(String id) throws ProductNotFoundException {
+        //mini challenge part 2
+        for (Product p : productList) {
+            if (p.getId().equalsIgnoreCase(id)) {
+                productList.remove(p);
+                return true;
+            }
+        }
+        throw new ProductNotFoundException("Produk dengan ID '" + id + "' tidak ditemukan!");
+    }
+
     public Product findById(String id) throws ProductNotFoundException {
         for (Product p : productList) {
             if (p.getId().equalsIgnoreCase(id)) {

@@ -16,8 +16,22 @@ public class App {
 
         System.out.println("\n=== PENCARIAN PRODUK ===");
         try {
-            Product p = repo.findById("PRD-99"); //ID tidak ditemukan
+            Product p = repo.findById("PRD-01"); //ID tidak ditemukan
             System.out.println("Ditemukan: " + p);
+        } catch (ProductNotFoundException e) {
+            System.err.println("Error Terjadi: " + e.getMessage());
+        }
+
+        System.out.println("\n=== HAPUS PRODUK ===");
+        try {
+            boolean idDeleted = repo.deleteById("PRD-01");
+            System.out.println("Hapus Berhasil: " + idDeleted);
+
+            System.out.println("\n=== DAFTAR SETELAH DIHAPUS ===");
+            repo.findAll().forEach(System.out::println);
+
+            repo.deleteById("PRD-01");
+
         } catch (ProductNotFoundException e) {
             System.err.println("Error Terjadi: " + e.getMessage());
         }
