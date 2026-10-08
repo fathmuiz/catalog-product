@@ -1,22 +1,22 @@
-# Catalog product
+# Product Catalog
 
-Aplikasi Java sederhana untuk mengelola katalog produk menggunakan Maven.
+A simple Java application for managing a product catalog, built with Maven
 
-## Fitur
+## Features
 
-- Menambahkan dan menampilkan produk
-- mencari produk berdasarkan ID
-- Menghapus produk berdasarkan ID
-- Menangani produk yang tidak ditemukan dengan custom exception
+- add and display products
+- find a product by ID
+- Delete product by ID
+- Handle missing products with a custom exception
 
-## Teknologi
+## Technologies
 
 - Java
-- Maven
+- Apache Maven
 
-## Menjalankan aplikasi
+## Run the application
 
-dari folder project yang berisi 'pom.xml', jalankan:
+ from the project directly containing 'pom.xml', run:
 
-'''bash
+```bash
 mvn org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass=com.budiluhur.catalog.App
