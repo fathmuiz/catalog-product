@@ -3,6 +3,8 @@ package com.budiluhur.catalog;
 import com.budiluhur.catalog.servlet.ProductServlet;
 import org.apache.catalina.Context;
 import org.apache.catalina.startup.Tomcat;
+import com.budiluhur.catalog.servlet.CategoryServlet;
+
 import java.io.File;
 
 public class App {
@@ -13,9 +15,18 @@ public class App {
             tomcat.setPort(8080);
             tomcat.getConnector();
             Context ctx = tomcat.addContext("", new File(".").getAbsolutePath());
+
+            // ProductServlet
             Tomcat.addServlet(ctx, "ProductServlet", new ProductServlet());
             ctx.addServletMappingDecoded("/products", "ProductServlet");
+
+            //CategoryServlet
+            Tomcat.addServlet(ctx, "CategoryServlet", new CategoryServlet());
+            ctx.addServletMappingDecoded( "/categories", "CategoryServlet");
+
             System.out.println("Server berhasil" + "berjalan di: " + "http://localhost:8080/products");
+            System.out.println("Server berhasil" + "berjalan di: " + "http://localhost:8080/categories");
+
             tomcat.start();
             tomcat.getServer().await();
         }

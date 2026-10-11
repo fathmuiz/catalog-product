@@ -29,16 +29,16 @@ public class CategoryServlet extends HttpServlet {
     protected void doGet(
         HttpServletRequest request, HttpServletResponse response ) throws IOException {
 
-            response.setContextType("text/html");
+            response.setContentType("text/html");
             response.setCharacterEncoding("UTF-8");
 
             PrintWriter out = response.getWriter();
 
             out.println("<html>");
-            out.println("<head><title>Daftar Kategori</title></head>");
+            out.println("<head><title>Daftar Kategori </title></head>");
             out.println("<body>");
 
-            out.println("<h2>Daftar Kategor</h2>");
+            out.println("<h2>Daftar Kategori </h2>");
             out.println("<ul>");
 
             for (Category category : categories) {
