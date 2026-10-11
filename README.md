@@ -19,4 +19,4 @@ A simple Java application for managing a product catalog, built with Maven
  from the project directly containing 'pom.xml', run:
 
 ```bash
-mvn org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass=com.budiluhur.catalog.App
+mvn exec:java -Dexec.mainClass="com.budiluhur.catalog.App"
