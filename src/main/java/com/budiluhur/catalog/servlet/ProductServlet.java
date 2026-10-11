@@ -35,7 +35,7 @@ public class ProductServlet extends HttpServlet {
         out.print("<head><title>Katalog " + "Produk Web</title></head>");
         out.println("<body>");
         out.println("<h2>=== DAFTAR KATALOG" + "PRODUK (WEB) ===</h2>");
-        out.println("<table border='1'" + "cellpadding=8">");
+        out.println("<table border='1'" + "cellpadding='8'>");
         out.println("<tr><th>ID Produk</th>" + "<th>Nama Produk</th><th>Harga " + "Satuan</th></tr>");
 
         for (Product p : products) {
