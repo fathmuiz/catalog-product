@@ -1,28 +1,32 @@
 # Product Catalog
 
-A simple Java application for managing a product catalog, built with Maven Jakarta Servlet using an embedded Apache Tomcat server.
+A simple Java application for displaying product and category catalogs, using Jakarta Servlet and an embedded Apache Tomcat server.
 
 ## Features
 
-- Display a list of products in a web browser
-- show product IDs, names, and prices
-- Initialize the catalog with sample product data
-- Generata an HTML table to display product information
+- Product catalog with a tabular view
+- Category catalog with a list view
+- Preloaded sample products and categories
+- Dedicated endpoints: `/products` and `/categories`
 
 ## Technologies
 
 - Java
 - Apache Maven
 - Jakarta Servlet
-- Apache Tomcat
+- Apache Tomcat 10
 
 ## Run the application
 
- from the project directly containing pom.xml, run:
+ from the project directory containing pom.xml, run:
 
 ```bash
 mvn exec:java -Dexec.mainClass="com.budiluhur.catalog.App"
 ```
-Then open the following URL in your web browser:
 
-http://localhost:8080/products
+## Access the application
+
+Once the application is running, open:
+
+- [Product catalog](http://localhost:8080/products)
+- [Category catalog](http://localhost:8080/categories)
