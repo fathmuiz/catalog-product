@@ -2,6 +2,7 @@ package com.budiluhur.catalog.servlet;
 
 import com.budiluhur.catalog.model.Product;
 import com.budiluhur.catalog.repository.ProductRepository;
+import com.budiluhur.catalog.exception.ProductNotFoundException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -26,9 +27,54 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws IOException {
+
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+
         PrintWriter out = response.getWriter();
+
+        String id = request.getParameter("id");
+
+        if (id != null && !id.trim().isEmpty()) {
+
+            try {
+                Product product = productRepository.findById(id);
+
+                out.println("<html>");
+                out.println("<head><title>Detail Produk</title></head>");
+                out.println("<body>");
+
+                out.println("<h2>Detail Produk</h2>");
+                out.println("<p>ID Produk: " + product.getId() + "</p>");
+                out.println("<p>Nama Produk: " + product.getName() + "</p>");
+                out.println("<p>Harga: Rp: " + product.getPrice() + "</p>");
+
+                out.println("<a href='/products'>Kembali ke katalog</a>");
+
+                out.println("</body>");
+                out.println("</html>");
+
+
+            } catch (ProductNotFoundException e) {
+
+                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+
+                out.println("<html>");
+                out.println("<head><title>Produk Tidak Ditenukan</title></head>");
+                out.println("<body>");
+
+                out.println("<h2 style='color: red;'>Produk Tidak Ditemukan</h2>");
+                out.println("<p style='color: red;'>" + "Produk dengan ID " + id + " tidak ditemukan.</p>");
+
+                out.println("<a href='/products'>Kembali ke Katalog</a>");
+
+                out.println("</body>");
+                out.println("</html>");
+            }
+
+            return;
+        }
+
         List<Product> products = productRepository.findAll();
 
         out.print("<html>");
